@@ -1,4 +1,4 @@
-function x = solveLU(L, U, P, b)
-    y = forwardElimination(L, P*b);
-    x = backwardSubstitution(U, y);
+function x = solveLU(L, U, b)
+    y = forwardElimination(L, b);
+    x = backwardSubstitution(U, b);
 end

@@ -12,11 +12,20 @@ for N = Ns
         q = pq(2);
 
         A = generateBandedMatrix(N, p, q);
+        [isNonSingular, A] = checkIfNonSingular(A);
+
+        if ~isNonSingular
+            disp('Regenerating matrix to ensure it is non-singular...');
+            while ~isNonSingular
+                A = generateBandedMatrix(N, p, q);
+                [isNonSingular, A] = checkIfNonSingular(A);
+            end
+        end
         b = rand(N, 1);  % Example right-hand side vector
 
         tic;  % Start timer
         [L, U, P] = lu_pivoting(A);
-        x = solveLU(L, U, P, b);
+        x = solveLU(L, U, b);
         elapsedTime = toc;  % Stop timer and record elapsed time
 
         % Calculate FLOPs

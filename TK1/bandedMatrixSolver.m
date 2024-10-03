@@ -12,6 +12,7 @@ for N = Ns
         q = pq(2);
 
         A = generateBandedMatrix(N, p, q);
+        analyzeMatrixCondition(A,N,p,q)
         [isNonSingular, A] = checkIfNonSingular(A);
 
         if ~isNonSingular

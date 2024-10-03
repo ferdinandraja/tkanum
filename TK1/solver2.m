@@ -14,7 +14,7 @@ for N = Ns
         % Test Recursive LU
         tic;
         [L, U] = RecursiveLU(A);
-        x = solveLU(L, U, eye(N), b);  % Assuming solveLU can handle the permutation as identity
+        x = solveLU(L, U, b);  % Assuming solveLU can handle the permutation as identity
         elapsedTime = toc;
         totalFlops = 2 * N^2;  % Simplified estimation for recursive
         results = [results; [N, p, q, elapsedTime, totalFlops, 1]];  % Use 1 to indicate Recursive LU
@@ -23,7 +23,7 @@ for N = Ns
         blockSize = min(32, N);  % Arbitrary block size choice
         tic;
         [L, U] = BlockLU(A, blockSize);
-        x = solveLU(L, U, eye(N), b);
+        x = solveLU(L, U, b);
         elapsedTime = toc;
         totalFlops = 2 * N^3 / (blockSize^2);  % Simplified estimation for block
         results = [results; [N, p, q, elapsedTime, totalFlops, 2]];  % Use 2 to indicate Block LU

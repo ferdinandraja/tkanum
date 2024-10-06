@@ -17,7 +17,10 @@ for N = Ns
         x = solveLU(L, U, b);  % Assuming solveLU can handle the permutation as identity
         elapsedTime = toc;
         totalFlops = 2 * N^2;  % Simplified estimation for recursive
-        results = [results; [N, p, q, elapsedTime, totalFlops, 1]];  % Use 1 to indicate Recursive LU
+        r = L*x - b% Use 1 to indicate Recursive LU
+        errorres = norm(r)
+        results = [results; [N, p, q, elapsedTime, totalFlops, 1, errorres]];
+    
 
         % Test Block LU
         blockSize = min(32, N);  % Arbitrary block size choice
@@ -26,7 +29,10 @@ for N = Ns
         x = solveLU(L, U, b);
         elapsedTime = toc;
         totalFlops = 2 * N^3 / (blockSize^2);  % Simplified estimation for block
-        results = [results; [N, p, q, elapsedTime, totalFlops, 2]];  % Use 2 to indicate Block LU
+        r = L*x - b% Use 1 to indicate Recursive LU
+        errorres = norm(r)
+        results = [results; [N, p, q, elapsedTime, totalFlops, 2, errorres]];  % Use 2 to indicate Block LU
+        
     end
 end
 
@@ -37,5 +43,5 @@ for i = 1:size(results, 1)
         method = 'Block LU';
     end
     fprintf('Method: %s, N: %d, p: %d, q: %d, Time: %.4f s, Estimated FLOPs: %.2f\n', ...
-            method, results(i, 1), results(i, 2), results(i, 3), results(i, 4), results(i, 5));
+            method, results(i, 1), results(i, 2), results(i, 3), results(i, 4), results(i, 5), results(1,6));
 end

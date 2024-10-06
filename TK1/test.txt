@@ -1,0 +1,240 @@
+Matrix Size N: 16, p: 1, q: 1
+Condition Number: 30.194650
+Residual Norm: 4.002966e-16
+The matrix is well-conditioned.
+Matrix is non-singular (condition number: 30.1947).
+LU Pivoting - Solve LU: Time: 0.0045421s, FLOPs: 3210.6667, Residual: 3.1044
+Recursive LU - Solve LU: Time: 0.0044341s, FLOPs: 3210.6667, Residual: 7.9286e-16
+Block LU - Solve LU: Time: 0.0019269s, FLOPs: 480, Residual: 0.071334
+Matrix Size N: 16, p: 2, q: 1
+Condition Number: 142.158983
+Residual Norm: 5.768888e-16
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 142.159).
+LU Pivoting - Solve LU: Time: 0.0024929s, FLOPs: 3210.6667, Residual: 3.4681
+Recursive LU - Solve LU: Time: 0.0017741s, FLOPs: 3210.6667, Residual: 6.4498e-16
+Block LU - Solve LU: Time: 0.00058699s, FLOPs: 480, Residual: 1.2865
+Matrix Size N: 16, p: 3, q: 4
+Condition Number: 136.875557
+Residual Norm: 4.002966e-16
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 136.8756).
+LU Pivoting - Solve LU: Time: 0.0025339s, FLOPs: 3210.6667, Residual: 5.9469
+Recursive LU - Solve LU: Time: 0.0016599s, FLOPs: 3210.6667, Residual: 7.3253e-15
+Block LU - Solve LU: Time: 0.00051785s, FLOPs: 480, Residual: 2.3154
+Matrix Size N: 16, p: 4, q: 4
+Condition Number: 84.827208
+Residual Norm: 6.181460e-16
+The matrix is well-conditioned.
+Matrix is non-singular (condition number: 84.8272).
+LU Pivoting - Solve LU: Time: 0.0023551s, FLOPs: 3210.6667, Residual: 5.9265
+Recursive LU - Solve LU: Time: 0.001853s, FLOPs: 3210.6667, Residual: 1.269e-15
+Block LU - Solve LU: Time: 0.00067401s, FLOPs: 480, Residual: 5.2051
+Matrix Size N: 16, p: 8, q: 8
+Condition Number: 125.895342
+Residual Norm: 7.771561e-16
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 125.8953).
+LU Pivoting - Solve LU: Time: 0.0024481s, FLOPs: 3210.6667, Residual: 6.5061
+Recursive LU - Solve LU: Time: 0.001575s, FLOPs: 3210.6667, Residual: 3.4409e-15
+Block LU - Solve LU: Time: 0.00047708s, FLOPs: 480, Residual: 8.2507
+Matrix Size N: 64, p: 1, q: 1
+Condition Number: 412.791653
+Residual Norm: 9.155134e-16
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 412.7917).
+LU Pivoting - Solve LU: Time: 0.03114s, FLOPs: 182826.6667, Residual: 7.7472
+Recursive LU - Solve LU: Time: 0.007411s, FLOPs: 182826.6667, Residual: 9.1572e-16
+Block LU - Solve LU: Time: 0.0014472s, FLOPs: 8064, Residual: 27.2416
+Matrix Size N: 64, p: 2, q: 1
+Condition Number: 321949.456204
+Residual Norm: 1.075051e-12
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 321949.4562).
+LU Pivoting - Solve LU: Time: 0.03102s, FLOPs: 182826.6667, Residual: 9.688
+Recursive LU - Solve LU: Time: 0.0080149s, FLOPs: 182826.6667, Residual: 1.443e-14
+Block LU - Solve LU: Time: 0.0015059s, FLOPs: 8064, Residual: 0.90007
+Matrix Size N: 64, p: 3, q: 4
+Condition Number: 880.213080
+Residual Norm: 9.330498e-15
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 880.2131).
+LU Pivoting - Solve LU: Time: 0.030172s, FLOPs: 182826.6667, Residual: 12.4208
+Recursive LU - Solve LU: Time: 0.006737s, FLOPs: 182826.6667, Residual: 4.1109e-15
+Block LU - Solve LU: Time: 0.0014422s, FLOPs: 8064, Residual: 4.9102
+Matrix Size N: 64, p: 16, q: 16
+Condition Number: 2537.875734
+Residual Norm: 2.279475e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 2537.8757).
+LU Pivoting - Solve LU: Time: 0.029999s, FLOPs: 182826.6667, Residual: 23.0033
+Recursive LU - Solve LU: Time: 0.0082281s, FLOPs: 182826.6667, Residual: 7.4395e-13
+Block LU - Solve LU: Time: 0.0014679s, FLOPs: 8064, Residual: 14.819
+Matrix Size N: 64, p: 32, q: 32
+Condition Number: 865.211849
+Residual Norm: 1.011888e-14
+The matrix condition is moderate.
+Matrix is non-singular (condition number: 865.2118).
+LU Pivoting - Solve LU: Time: 0.029951s, FLOPs: 182826.6667, Residual: 27.7405
+Recursive LU - Solve LU: Time: 0.0083899s, FLOPs: 182826.6667, Residual: 3.2942e-13
+Block LU - Solve LU: Time: 0.0015631s, FLOPs: 8064, Residual: 80.9426
+Matrix Size N: 128, p: 1, q: 1
+Condition Number: 1869.076317
+Residual Norm: 9.887843e-15
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 1869.0763).
+LU Pivoting - Solve LU: Time: 0.114s, FLOPs: 1430613.3333, Residual: 11.4673
+Recursive LU - Solve LU: Time: 0.017247s, FLOPs: 1430613.3333, Residual: 5.1835e-15
+Block LU - Solve LU: Time: 0.002769s, FLOPs: 32512, Residual: 0.39845
+Matrix Size N: 128, p: 2, q: 1
+Condition Number: 11228.770708
+Residual Norm: 1.304867e-13
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 11228.7707).
+LU Pivoting - Solve LU: Time: 0.11308s, FLOPs: 1430613.3333, Residual: 13.4387
+Recursive LU - Solve LU: Time: 0.016892s, FLOPs: 1430613.3333, Residual: 2.7991e-15
+Block LU - Solve LU: Time: 0.0028s, FLOPs: 32512, Residual: 1.6014
+Matrix Size N: 128, p: 3, q: 4
+Condition Number: 1035.727106
+Residual Norm: 8.156173e-15
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 1035.7271).
+LU Pivoting - Solve LU: Time: 0.12551s, FLOPs: 1430613.3333, Residual: 18.2712
+Recursive LU - Solve LU: Time: 0.017494s, FLOPs: 1430613.3333, Residual: 2.2299e-14
+Block LU - Solve LU: Time: 0.002733s, FLOPs: 32512, Residual: 89.5024
+Matrix Size N: 128, p: 32, q: 32
+Condition Number: 2587.395904
+Residual Norm: 1.195695e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 2587.3959).
+LU Pivoting - Solve LU: Time: 0.11539s, FLOPs: 1430613.3333, Residual: 43.8726
+Recursive LU - Solve LU: Time: 0.017985s, FLOPs: 1430613.3333, Residual: 2.7681e-13
+Block LU - Solve LU: Time: 0.003406s, FLOPs: 32512, Residual: 67.72
+Matrix Size N: 128, p: 64, q: 64
+Condition Number: 5190.650898
+Residual Norm: 4.194469e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 5190.6509).
+LU Pivoting - Solve LU: Time: 0.11777s, FLOPs: 1430613.3333, Residual: 53.7639
+Recursive LU - Solve LU: Time: 0.016549s, FLOPs: 1430613.3333, Residual: 9.4165e-12
+Block LU - Solve LU: Time: 0.0027719s, FLOPs: 32512, Residual: 57389.9813
+Matrix Size N: 256, p: 1, q: 1
+Condition Number: 8309.932178
+Residual Norm: 2.376655e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 8309.9322).
+LU Pivoting - Solve LU: Time: 0.46825s, FLOPs: 11315370.6667, Residual: 14.8687
+Recursive LU - Solve LU: Time: 0.031585s, FLOPs: 11315370.6667, Residual: 7.1322e-15
+Block LU - Solve LU: Time: 0.0061769s, FLOPs: 130560, Residual: 2.2334
+Matrix Size N: 256, p: 2, q: 1
+Condition Number: 224537.992660
+Residual Norm: 1.952825e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 224537.9927).
+LU Pivoting - Solve LU: Time: 0.46223s, FLOPs: 11315370.6667, Residual: 19.2868
+Recursive LU - Solve LU: Time: 0.033743s, FLOPs: 11315370.6667, Residual: 3.1229e-15
+Block LU - Solve LU: Time: 0.0064859s, FLOPs: 130560, Residual: 1.7389
+Matrix Size N: 256, p: 3, q: 4
+Condition Number: 15783.826906
+Residual Norm: 2.631252e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 15783.8269).
+LU Pivoting - Solve LU: Time: 0.46095s, FLOPs: 11315370.6667, Residual: 24.5253
+Recursive LU - Solve LU: Time: 0.032775s, FLOPs: 11315370.6667, Residual: 7.8833e-14
+Block LU - Solve LU: Time: 0.0059359s, FLOPs: 130560, Residual: 3.1434
+Matrix Size N: 256, p: 64, q: 64
+Condition Number: 13245.421220
+Residual Norm: 1.253414e-13
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 13245.4212).
+LU Pivoting - Solve LU: Time: 0.46531s, FLOPs: 11315370.6667, Residual: 86.1258
+Recursive LU - Solve LU: Time: 0.03255s, FLOPs: 11315370.6667, Residual: 1.5534e-12
+Block LU - Solve LU: Time: 0.005836s, FLOPs: 130560, Residual: 141.4343
+Matrix Size N: 256, p: 128, q: 128
+Condition Number: 6641.193521
+Residual Norm: 5.514334e-14
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 6641.1935).
+LU Pivoting - Solve LU: Time: 0.45477s, FLOPs: 11315370.6667, Residual: 107.737
+Recursive LU - Solve LU: Time: 0.032816s, FLOPs: 11315370.6667, Residual: 8.3563e-12
+Block LU - Solve LU: Time: 0.0059981s, FLOPs: 130560, Residual: 702.5269
+Matrix Size N: 512, p: 1, q: 1
+Condition Number: 60133.659945
+Residual Norm: 5.347575e-13
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 60133.6599).
+LU Pivoting - Solve LU: Time: 1.984s, FLOPs: 90001749.3333, Residual: 21.7133
+Recursive LU - Solve LU: Time: 0.064757s, FLOPs: 90001749.3333, Residual: 7.3298e-15
+Block LU - Solve LU: Time: 0.017906s, FLOPs: 523264, Residual: 0.13591
+Matrix Size N: 512, p: 2, q: 1
+Condition Number: 167370256170.532013
+Residual Norm: 2.471494e-06
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 167370256170.532).
+LU Pivoting - Solve LU: Time: 1.9915s, FLOPs: 90001749.3333, Residual: 27.074
+Recursive LU - Solve LU: Time: 0.067662s, FLOPs: 90001749.3333, Residual: 1.5798e-14
+Block LU - Solve LU: Time: 0.017205s, FLOPs: 523264, Residual: 1.331
+Matrix Size N: 512, p: 3, q: 4
+Condition Number: 636327.260938
+Residual Norm: 7.134225e-12
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 636327.2609).
+LU Pivoting - Solve LU: Time: 2.0658s, FLOPs: 90001749.3333, Residual: 35.4215
+Recursive LU - Solve LU: Time: 0.065058s, FLOPs: 90001749.3333, Residual: 2.9683e-14
+Block LU - Solve LU: Time: 0.017208s, FLOPs: 523264, Residual: 2.5337
+Matrix Size N: 512, p: 128, q: 128
+Condition Number: 39402.994839
+Residual Norm: 1.937912e-13
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 39402.9948).
+LU Pivoting - Solve LU: Time: 1.9706s, FLOPs: 90001749.3333, Residual: 165.5039
+Recursive LU - Solve LU: Time: 0.067227s, FLOPs: 90001749.3333, Residual: 2.1336e-12
+Block LU - Solve LU: Time: 0.017362s, FLOPs: 523264, Residual: 3890.8448
+Matrix Size N: 512, p: 256, q: 256
+Condition Number: 217560.156214
+Residual Norm: 3.549091e-12
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 217560.1562).
+LU Pivoting - Solve LU: Time: 1.977s, FLOPs: 90001749.3333, Residual: 210.7352
+Recursive LU - Solve LU: Time: 0.066927s, FLOPs: 90001749.3333, Residual: 4.4381e-12
+Block LU - Solve LU: Time: 0.01749s, FLOPs: 523264, Residual: 2964.905
+Matrix Size N: 1000, p: 1, q: 1
+Condition Number: 9679.539934
+Residual Norm: 2.066852e-13
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 9679.5399).
+LU Pivoting - Solve LU: Time: 7.531s, FLOPs: 668664666.6667, Residual: 30.2705
+Recursive LU - Solve LU: Time: 0.13722s, FLOPs: 668664666.6667, Residual: 1.8391e-12
+Block LU - Solve LU: Time: 0.042495s, FLOPs: 1998000, Residual: 0.30557
+Matrix Size N: 1000, p: 2, q: 1
+Condition Number: 19029098305.258667
+Residual Norm: 1.576045e-07
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 19029098305.2587).
+LU Pivoting - Solve LU: Time: 7.4098s, FLOPs: 668664666.6667, Residual: 38.2406
+Recursive LU - Solve LU: Time: 0.13864s, FLOPs: 668664666.6667, Residual: 2.4043e-14
+Block LU - Solve LU: Time: 0.052482s, FLOPs: 1998000, Residual: 1.1309
+Matrix Size N: 1000, p: 3, q: 4
+Condition Number: 19972310.890564
+Residual Norm: 1.007091e-10
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 19972310.8906).
+LU Pivoting - Solve LU: Time: 7.9412s, FLOPs: 668664666.6667, Residual: 48.7408
+Recursive LU - Solve LU: Time: 0.13712s, FLOPs: 668664666.6667, Residual: 4.2753e-13
+Block LU - Solve LU: Time: 0.047652s, FLOPs: 1998000, Residual: 19.0555
+Matrix Size N: 1000, p: 250, q: 250
+Condition Number: 45735.495419
+Residual Norm: 1.046400e-12
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 45735.4954).
+LU Pivoting - Solve LU: Time: 7.3675s, FLOPs: 668664666.6667, Residual: 319.8246
+Recursive LU - Solve LU: Time: 0.14351s, FLOPs: 668664666.6667, Residual: 3.7611e-11
+Block LU - Solve LU: Time: 0.040632s, FLOPs: 1998000, Residual: 3557.6103
+Matrix Size N: 1000, p: 500, q: 500
+Condition Number: 424411.386793
+Residual Norm: 7.882081e-12
+The matrix is ill-conditioned.
+Matrix is non-singular (condition number: 424411.3868).
+LU Pivoting - Solve LU: Time: 7.4395s, FLOPs: 668664666.6667, Residual: 408.8955
+Recursive LU - Solve LU: Time: 0.13896s, FLOPs: 668664666.6667, Residual: 1.8544e-10
+Block LU - Solve LU: Time: 0.043024s, FLOPs: 1998000, Residual: 7737.3217

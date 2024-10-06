@@ -42,3 +42,15 @@ residual_qr_stored_Q = compute_residuals(Z, y, theta_qr_stored_Q);
 fprintf('Residual (Normal Equation): %.5f\n', residual_normal);
 fprintf('Residual (QR Decomposition): %.5f\n', residual_qr);
 fprintf('Residual (QR with stored Q): %.5f\n', residual_qr_stored_Q);
+
+% Calculate FLOPs for PCA (Eigenvalue Decomposition)
+calculate_flops_pca_eigen(X_std);
+
+% Calculate FLOPs for PCA (QR Decomposition)
+calculate_flops_pca_qr(X_std);
+
+% Calculate FLOPs for Linear Regression (Normal Equation)
+calculate_flops_linear_regression_normal(X_std, y);
+
+% Calculate FLOPs for Linear Regression (QR Decomposition)
+calculate_flops_linear_regression_qr(X_std, y);

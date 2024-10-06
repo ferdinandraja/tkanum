@@ -1,4 +1,4 @@
-function theta = linear_regression_qr_no_Q(Z, y)
+function theta = linear_regression_qr(Z, y)
     % Add intercept term to Z
     Z_aug = [ones(size(Z, 1), 1) Z]; % Augmented matrix with intercept
     

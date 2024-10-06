@@ -13,8 +13,4 @@ function [optimal_k, eigenvalues, R] = calculate_optimal_k(Sigma, threshold)
     
     % Step 3: Find the smallest k where the cumulative variance exceeds the threshold
     optimal_k = find(cumulative_variance >= threshold, 1);  % Find first k where cumulative variance >= threshold
-    
-    % Display cumulative variance for reference
-    fprintf('Cumulative Variance:\n');
-    disp(cumulative_variance);
 end

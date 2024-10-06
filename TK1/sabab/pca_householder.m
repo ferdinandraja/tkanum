@@ -1,4 +1,4 @@
-function [Z, eigenvalues, eigenvectors] = pca_householder(X_std, Sigma, k)
+function [Z, eigenvalues, eigenvectors] = pca_householder(X_std, Sigma)
     [k, eigenvalues, eigenvectors] = calculate_optimal_k(Sigma, 0.90);
     
     % Step 3: Select top k components

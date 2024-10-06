@@ -8,24 +8,25 @@ y = data(:, end);     % Response variable
 % Step 2: Compute covariance matrix
 Sigma = covariance(X_std);
 
-% Step 3: Perform PCA using QR decomposition (Householder with stored Q)
-[Z_no_Q, eigenvalues_no_Q] = pca_householder_no_Q(X_std,Sigma);  % k = 3 components
-[Z, eigenvalues, eigenvectors] = pca_householder(X_std, Sigma);  % Example with k=3
+% Step 3: Perform PCA using QR decomposition (Householder with stored Q) 
 
 % Step 4: Linear regression using the three approaches
 
 % Measure time for Normal Equation
 tic;
-theta_normal = linear_regression_normal(Z, y);
+[Z_normal, eigenvalues_normal, eigenvectors_normal] = pca_eigen(X_std,Sigma);
+theta_normal = linear_regression_normal(Z_normal, y);
 time_normal = toc;
 
 % Measure time for QR Decomposition without Q
 tic;
+[Z_no_Q, eigenvalues_no_Q] = pca_householder_no_Q(X_std,Sigma); 
 theta_qr = linear_regression_qr(Z_no_Q, y);
 time_qr = toc;
 
 % Measure time for QR Decomposition with stored Q
 tic;
+[Z, eigenvalues, eigenvectors] = pca_householder(X_std, Sigma);  
 theta_qr_stored_Q = linear_regression_qr_with_Q(Z, y);
 time_qr_stored_Q = toc;
 
@@ -33,7 +34,7 @@ fprintf('Time (Normal Equation): %.5f seconds\n', time_normal);
 fprintf('Time (QR Decomposition): %.5f seconds\n', time_qr);
 fprintf('Time (QR with stored Q): %.5f seconds\n', time_qr_stored_Q);
 % Step 5: Compute residuals for comparison
-residual_normal = compute_residuals(Z, y, theta_normal);
+residual_normal = compute_residuals(Z_normal, y, theta_normal);
 residual_qr = compute_residuals(Z_no_Q, y, theta_qr);
 residual_qr_stored_Q = compute_residuals(Z, y, theta_qr_stored_Q);
 

@@ -1,46 +1,55 @@
-import cv2
-import numpy as np
-from tabulate import tabulate
+import csv
 
-# Load the image
-img = cv2.imread('image_data_scraping.png')
+input_data = [
+    {"y": 0,   "xr": 317, "x_values": [0]},
+    {"y": 413, "xr": 143, "x_values": [176, 486, 798, 1110, 1425, 1734]},
+    {"y": 548, "xr": 88,  "x_values": [107, 292, 479, 675, 863, 1050, 1245, 1435, 1626, 18111]},
+    {"y": 608, "xr": 65,  "x_values": [350, 484, 617, 753, 890, 1026, 1161, 13298, 1434, 1571]},
+    {"y": 642, "xr": 50,  "x_values": [481, 586, 691, 801, 902, 1010, 1218, 1224, 1333, 1433]},
+    {"y": 660, "xr": 41,  "x_values": [556, 651, 740, 831, 912, 1005, 1090, 1180, 1270, 1346]},
+    {"y": 680, "xr": 35,  "x_values": [631, 699, 769, 849, 922, 993, 1068, 1141, 1212, 1277]},
+    {"y": 687, "xr": 29,  "x_values": [673, 737, 800, 864, 926, 989, 1055, 1118, 1184, 1249]},
+    {"y": 695, "xr": 27,  "x_values": [700, 755, 817, 877, 935, 991, 1047, 1104, 1165, 1214]},
+    {"y": 702, "xr": 25,  "x_values": [729, 775, 826, 879, 938, 985, 1040, 1091, 1150, 1193]},
+]
 
-# Check if the image is loaded correctly
-if img is None:
-    print("Error: Image could not be loaded. Please check the file path.")
-    exit()
+time_stamps = [0, 60, 120, 180, 240, 300, 360, 420, 480, 540]
+real_y_values = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
 
-# Convert the image to grayscale
-gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+def compute_dx_values(x_ref, x_list):
+    extended = [0] + x_list
+    increments = []
+    for i in range(1, len(extended)):
+        dx = (2.5 / x_ref) * (extended[i] - extended[i - 1])
+        increments.append(dx)
+    return increments
 
-# Threshold the image to get binary image
-_, binary_img = cv2.threshold(gray_img, 128, 255, cv2.THRESH_BINARY)
+def accumulate_values(increments):
+    cumulative = []
+    running_total = 0
+    for val in increments:
+        running_total += val
+        cumulative.append(running_total)
+    return cumulative
 
-# Find contours of the areas
-contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+final_results = {}
 
-# Define pixel to meter conversion factor and y values
-px_to_m = 2.5
-y_values = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
+for idx, record in enumerate(input_data):
+    xr_value = record["xr"]
+    pixel_xs = record["x_values"]
 
-# Initialize data list
-data = [['t', 'xt', 'yt']]
+    dx_increments = compute_dx_values(xr_value, pixel_xs)
+    real_x_coords = accumulate_values(dx_increments)
 
-# Function to compute x real world coordinates
-def compute_x_real(y_px, x_px):
-    xr = 317  # Base xr value from given data table, this should be dynamic or calculated if varying
-    return (px_to_m / xr) * x_px
+    final_results[f"frame_{idx}"] = real_x_coords
 
-# Process each contour to extract data points
-for idx, contour in enumerate(contours):
-    # Calculate moments for each contour to find centroids
-    M = cv2.moments(contour)
-    if M['m00'] != 0:
-        x_px = int(M['m10']/M['m00'])
-        y_px = int(M['m01']/M['m00'])
-        x_real = compute_x_real(y_px, x_px)
-        y_real = y_values[idx % len(y_values)]  # This assumes contours are sorted in a specific order
-        data.append([idx * 60, x_real, y_real])  # Assuming frames based on idx, adjust as necessary
+csv_filename = "processed_coordinates.csv"
+with open(csv_filename, mode="w", newline="") as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["t", "real_x_values", "real_y_value"])
+    
+    for i, (key, xcoords) in enumerate(final_results.items()):
+        x_str = ";".join(map(str, xcoords))
+        writer.writerow([time_stamps[i], x_str, real_y_values[i]])
 
-# Print data table
-print(tabulate(data, headers='firstrow'))
+print(f"Data successfully written to {csv_filename}")

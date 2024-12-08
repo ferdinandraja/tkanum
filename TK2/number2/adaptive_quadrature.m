@@ -1,36 +1,38 @@
 function [integral, N_total] = adaptive_quadrature(a, b, TOL, y)
-    % Adaptive quadrature using recursive bisection
     N_total = 0;
-    
-    function S = approximation(a, b)
+
+    function [S, fa, fb, fc] = initial_approximation(a, b)
         c = (a + b) / 2;
-        f_a = log_loss(a, y);
-        f_b = log_loss(b, y);
-        f_c = log_loss(c, y);
-
-        C = (a + b) / 2;
-        S_a_b = (b - a) * (f_a + f_b) / 2;
-        S_a_c = (c - a) * (f_a + f_c) / 2;
-        S_c_b = (b - c) * (f_c + f_b) / 2;
-        S = S_a_c + S_c_b;
-
-        N_total += 1;
+        fa = log_loss(a,y);
+        fb = log_loss(b,y);
+        fc = log_loss(c,y);
+        S = (b - a) * (fa + 4 * fc + fb) / 6;
+        N_total = N_total + 3;
     end
-    
-    function integral = quad_recursive(a, b)
-        S_a_b = approximation(a, b);
-        S_a_c = approximation(a, (a + b) / 2);
-        S_c_b = approximation((a + b) / 2, b);
-        
-        if abs(S_a_b - S_a_c - S_c_b) <= 3 * TOL * (b - a) * (b - a) / (b_orig - a_orig)
-            integral = S_a_b;
+
+    function S = quad_recursive(a, b, S, fa, fb, fc, TOL)
+        c = (a + b) / 2;
+        d = (a + c) / 2;
+        e = (c + b) / 2;
+
+        fd = log_loss(d,y);
+        fe = log_loss(e,y);
+        N_total = N_total + 2;
+
+        S_left  = (c - a) * (fa + 4 * fd + fc) / 6;
+        S_right = (b - c) * (fc + 4 * fe + fb) / 6;
+
+        S_refined = S_left + S_right;
+        error_estimate = abs(S_refined - S);
+
+        if error_estimate <= 15 * TOL
+            S = S_refined + (S_refined - S) / 15;
         else
-            integral = quad_recursive(a, (a + b) / 2) + quad_recursive((a + b) / 2, b);
+            S = quad_recursive(a, c, S_left, fa, fc, fd, TOL / 2) + quad_recursive(c, b, S_right, fc, fb, fe, TOL / 2);
         end
     end
 
-    a_orig = a;
-    b_orig = b;
-    
-    integral = quad_recursive(a, b);
+    [S_initial, fa, fb, fc] = initial_approximation(a, b);
+    integral = quad_recursive(a, b, S_initial, fa, fb, fc, TOL);
+
 end
